@@ -35,7 +35,7 @@ public class MaquinaBebida {
         if (inventario.getCafe() < CafeConLeche.getCafeNecesario() || inventario.getAgua() < CafeConLeche.getAguaNecesaria() || inventario.getVaso() < 1 || inventario.getAzucar() < azucar || inventario.getCucharita() < cucharita || inventario.getLeche() < CafeConLeche.getLecheNecesaria()) {
             System.out.println("Cafe con leche agotado");
         } else {
-            almacenVentas.registrarVenta(new CafeExpresso(cucharita, azucar, precios));
+            almacenVentas.registrarVenta(new CafeConLeche(cucharita, azucar, precios));
             inventario.reducirCafe(CafeConLeche.getCafeNecesario());
             inventario.reducirAgua(CafeConLeche.getAguaNecesaria());
             inventario.reducirLeche(CafeConLeche.getLecheNecesaria());
@@ -49,7 +49,7 @@ public class MaquinaBebida {
         if (inventario.getCafe() < CafeLargo.getCafeNecesario() || inventario.getAgua() < CafeLargo.getAguaNecesaria() || inventario.getVaso() < 1 || inventario.getAzucar() < azucar || inventario.getCucharita() < cucharita) {
             System.out.println("Cafe largo agotado");
         } else {
-            almacenVentas.registrarVenta(new CafeExpresso(cucharita, azucar, precios));
+            almacenVentas.registrarVenta(new CafeLargo(cucharita, azucar, precios));
             inventario.reducirCafe(CafeLargo.getCafeNecesario());
             inventario.reducirAgua(CafeLargo.getAguaNecesaria());
             inventario.reducirCucharitas(cucharita);
@@ -62,7 +62,7 @@ public class MaquinaBebida {
         if (inventario.getCacao() < Chocolate.getCacaoNecesario() || inventario.getAgua() < CafeExpresso.getAguaNecesaria() || inventario.getVaso() < 1 || inventario.getAzucar() < azucar || inventario.getCucharita() < cucharita) {
             System.out.println("Chocolate agotado");
         } else {
-            almacenVentas.registrarVenta(new CafeExpresso(cucharita, azucar, precios));
+            almacenVentas.registrarVenta(new Chocolate(cucharita, azucar, precios));
             inventario.reducirCacao(Chocolate.getCacaoNecesario());
             inventario.reducirAgua(Chocolate.getAguaNecesaria());
             inventario.reducirCucharitas(cucharita);
@@ -75,7 +75,7 @@ public class MaquinaBebida {
         if (inventario.getTe() < Te.getTeNecesario() || inventario.getAgua() < CafeExpresso.getAguaNecesaria() || inventario.getVaso() < 1 || inventario.getAzucar() < azucar || inventario.getCucharita() < cucharita) {
             System.out.println("Té agotado");
         } else {
-            almacenVentas.registrarVenta(new CafeExpresso(cucharita, azucar, precios));
+            almacenVentas.registrarVenta(new Te(cucharita, azucar, precios));
             inventario.reducirTe(Te.getTeNecesario());
             inventario.reducirAgua(Te.getAguaNecesaria());
             inventario.reducirCucharitas(cucharita);

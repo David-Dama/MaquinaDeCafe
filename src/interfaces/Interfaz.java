@@ -73,13 +73,6 @@ public class Interfaz {
                 default:
                     System.out.println("Opción no válida.");
             }
-            
-            if (opcion > 1 && opcion < 5) {
-                int respuesta = Utilidades.repuestaConSoN("¿Desea comprar otra bebida? (s/n): ");
-                if (respuesta == 0) {
-                    opcion = 6;
-                }
-            }
         } while (true);
     }
     

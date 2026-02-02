@@ -76,14 +76,14 @@ public class InterfazAdmin {
                 ║ 1. Ver estado inventario           ║
                 ║ 2. Reponer ingredientes y stock    ║
                 ║ 3. Ver datos de una bebida vendida ║
-                ║ 3. Ver reporte financiero          ║
-                ║ 4. Cambiar precios                 ║
-                ║ 5. Modificar recetas               ║
-                ║ 6. Modificar opciones de azucar    ║
-                ║ 7. Modificar usuario               ║
-                ║ 8. Modificar contraseña            ║
-                ║ 9. Volver al menú principal        ║
-                ║ 10. Apagar máquina                 ║
+                ║ 4. Ver reporte financiero          ║
+                ║ 5. Cambiar precios                 ║
+                ║ 6. Modificar recetas               ║
+                ║ 7. Modificar opciones de azucar    ║
+                ║ 8. Modificar usuario               ║
+                ║ 9. Modificar contraseña            ║
+                ║ 10. Volver al menú principal       ║
+                ║ 11. Apagar máquina                 ║
                 ╚════════════════════════════════════╝""");
             opcion = Utilidades.pedirInt("Seleccione una opción: ");
             
@@ -136,7 +136,7 @@ public class InterfazAdmin {
         
         do {
             System.out.println("""
-                Seleccione la bebida la quiere modificar:
+                Seleccione la bebida:
                 1. Café Expresso
                 2. Café Largo
                 3. Café con Leche
@@ -272,7 +272,7 @@ public class InterfazAdmin {
                 default:
                     System.out.println("Opción no válida.");
             }
-        } catch (NullPointerException _){
+        } catch (NullPointerException e){
             System.out.println("No se ha encontrado ningúna bebida del tipo seleccionado con ese ID");
         }
     }
