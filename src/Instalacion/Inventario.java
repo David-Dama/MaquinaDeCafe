@@ -1,7 +1,7 @@
-package src.maquinasDeCafe.inventario;
+package src.Instalacion;
 
-public class IngredientesYStock {
-
+public class Inventario {
+    
     //Atributos
     private int agua;
     private int leche;
@@ -19,9 +19,9 @@ public class IngredientesYStock {
     private final int maxAzucar;
     private final int maxVasos;
     private final int maxCucharitas;
-
+    
     //Constructor
-    public IngredientesYStock(int maxAgua, int maxLeche, int maxCafe, int maxCacao, int maxTe, int maxAzucar, int maxVasos, int maxCucharitas) {
+    public Inventario(int maxAgua, int maxLeche, int maxCafe, int maxCacao, int maxTe, int maxAzucar, int maxVasos, int maxCucharitas) {
         this.maxAgua = maxAgua;
         this.maxLeche = maxLeche;
         this.maxCafe = maxCafe;
@@ -33,90 +33,90 @@ public class IngredientesYStock {
         recargaIngredientes();
         recargaStock();
     }
-
+    
     //Getters y setters
     public int getAgua() {
         return agua;
     }
-
+    
     public void setAgua(int agua) {
         this.agua = agua;
     }
-
+    
     public int getLeche() {
         return leche;
     }
-
+    
     public void setLeche(int leche) {
         this.leche = leche;
     }
-
+    
     public int getCafe() {
         return cafe;
     }
-
+    
     public void setCafe(int cafe) {
         this.cafe = cafe;
     }
-
+    
     public int getCacao() {
         return cacao;
     }
-
+    
     public void setCacao(int cacao) {
         this.cacao = cacao;
     }
-
+    
     public int getTe() {
         return te;
     }
-
+    
     public void setTe(int te) {
         this.te = te;
     }
-
+    
     public int getAzucar() {
         return azucar;
     }
-
+    
     public void setAzucar(int azucar) {
         this.azucar = azucar;
     }
-
+    
     public int getVaso() {
         return vasos;
     }
-
+    
     public void setVaso(int vasos) {
         this.vasos = vasos;
     }
-
+    
     public int getCucharita() {
         return cucharitas;
     }
-
+    
     public void setCucharita(int cucharitas) {
         this.cucharitas = cucharitas;
     }
-
+    
     //ToString
     @Override
     public String toString() {
         return String.format("""
-                Cantidad de cada ingredientes y stock:
-                    Agua = %d
-                    Leche = %d
-                    Cafe = %d
-                    Cacao = %d
-                    Te = %d
-                    Azúcar = %d
-                    Vasos = %d
-                    cucharitas = %d
-                """, agua, leche, cafe, cacao, te, azucar, vasos, cucharitas);
+            Cantidad de cada ingredientes y stock:
+                Agua       = %d ml.
+                Leche      = %d ml.
+                Café       = %d gr.
+                Cacao      = %d gr.
+                Té         = %d gr.
+                Azúcar     = %d gr.
+                Vasos      = %d ud.
+                Cucharitas = %d ud.
+            """, agua, leche, cafe, cacao, te, azucar, vasos, cucharitas);
     }
-
+    
     //-----METODOS-----
-
+    
     //Este metodo poner la cantidad de ingredientes al máximo
     public void recargaIngredientes() {
         agua = maxAgua;
@@ -126,10 +126,42 @@ public class IngredientesYStock {
         te = maxTe;
         azucar = maxAzucar;
     }
-
+    
     //Este metodo pone el stock al máximo
     public void recargaStock() {
         vasos = maxVasos;
         cucharitas = maxCucharitas;
+    }
+    
+    public void reducirCafe(int n) {
+        cafe -= n;
+    }
+    
+    public void reducirAgua(int n){
+        agua -= n;
+    }
+    
+    public void reducirLeche(int n){
+        leche -= n;
+    }
+    
+    public void reducirTe(int n){
+        te -= n;
+    }
+    
+    public void reducirCacao(int n){
+        cacao -= n;
+    }
+    
+    public void reducirAzucar(int n){
+        azucar -= n;
+    }
+    
+    public void reducirCucharitas (int n){
+        cucharitas -= n;
+    }
+    
+    public void reducirVasos (int n){
+        vasos -= n;
     }
 }
